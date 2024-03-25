@@ -12,9 +12,9 @@ const port = process.env.PORT || 3000;
 app.use(express.json());
 app.use(cors());
 
-app.use("/",(req,res)=>{
-    res.send("Home Page")
-})
+// app.use("/",(req,res)=>{
+//     res.send("Home Page")
+// })
 
 
 
@@ -29,7 +29,7 @@ app.listen(port, async () => {
     await dbConnection;
     console.log(`server is connected DB`);
   } catch (error) {
-    console.log("error while connecting to DB");
+    console.log("error while connecting to DB",error);
   }
   console.log(`server is running on ${port}`);
 });
